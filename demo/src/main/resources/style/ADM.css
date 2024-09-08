@@ -1,0 +1,55 @@
+   table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: rgb(37, 140, 199);
+    color: white;
+}
+
+/* Estilos para os botões */
+.acao-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.novo-btn:hover {
+    color: white;
+    background-color: rgb(4, 104, 161);
+}
+
+.alterar-btn:hover {
+    color: white;
+    background-color: #249628;
+}
+
+.excluir-btn:hover {
+    color: white;
+    background-color: #c20202;
+    ;
+}
+
+.alterar-btn {
+    background-color: #4CAF50;
+}
+
+.excluir-btn {
+    background-color: #dd3131;
+}
+
+.novo-btn {
+    background-color: rgb(37, 140, 199);
+}

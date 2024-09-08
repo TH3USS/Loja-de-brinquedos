@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary's Play Haven</title>
+    <link rel="stylesheet" href="../style/style.css"> <!--Link da folha de estilo (do arquivo CSS, tem que ser o caminho de onde está o arquivo)-->
+    <link rel="stylesheet" href="../style/brinquedo.css">
+
+</head>
+
+<body>
+    
+    <header>
+        <nav class="nav">
+              <img src="../images/blocos.png" class="logo">
+              <h1 class="titulo">Mary's<br><span class="mary">Play Haven</span></h1>
+        </nav>        
+    </header>
+
+    <div class="container">
+
+        <section class="sidebar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="../templates/Home.html" class="nav-link">
+                        <img src="../images/botao-de-inicio.png" alt="#" class="icon">
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../templates/Catalogo.html" class="nav-link">
+                        <img src="../images/nota-musical.png" alt="#" class="icon">
+                        <span class="link-text">Musical</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../templates/Catalogo.html" class="nav-link">
+                        <img src="../images/varinha-magica.png" alt="#" class="icon">
+                        <span class="link-text">Imaginativo</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../templates/Catalogo.html" class="nav-link">
+                        <img src="../images/cerebro-humano.png" alt="#" class="icon">
+                        <span class="link-text">Sensorial</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../templates/Catalogo.html" class="nav-link">
+                        <img src="../images/abra-o-livro.png" alt="#" class="icon">
+                        <span class="link-text">Educativa</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../templates/Catalogo.html" class="nav-link">
+                        <img src="../images/modo-esporte.png" alt="#" class="icon">
+                        <span class="link-text">Atividade Física</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../templates/Catalogo.html" class="nav-link">
+                        <img src="../images/enigma.png" alt="#" class="icon">
+                        <span class="link-text">Quebra-Cabeça</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="../templates/ADM.html" class="nav-link">
+                        <img src="../images/definicoes.png" alt="#" class="icon">
+                        <span class="link-text">Administração (ADM)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <img src="../images/trabalho-em-equipe.png" alt="#" class="icon">
+                        <span class="link-text">Equipe</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <main class="main">
+            <!-- Área de interação -->
+            <div id="breadcrumb">
+                <span th:text="'Home > ' + ${categoria} + ' > ' + ${detalhesBrinquedo.nome}"></span>
+            </div>
+
+            <div class="b s1">.</div>
+            <div class="b s2">.</div>
+            <div class="b s3">.</div>
+
+            <h2>Detalhes do Brinquedo</h2>
+
+            <!-- Área de detalhes do brinquedo -->
+            <div id="detalhes-brinquedo">
+                <!-- Os detalhes do brinquedo serão carregados dinamicamente aqui pelo Thymeleaf -->
+                <p class="categoria">Categoria: <span th:text="${detalhesBrinquedo.categoria}">Imaginativo</span></p>
+                <h3 th:text="${detalhesBrinquedo.nome + ' - ' + detalhesBrinquedo.codigo}" class="nome">Veleiro e Marilheiros</h3>
+                <section class="container-brinquedo">
+                    <img th:src="${detalhesBrinquedo.imagemCaminho}" th:alt="'Imagem do ' + ${detalhesBrinquedo.nome}" src="../images/Brinquedos-educativos-de-madeira-para-veleiro-Little-Land-Yacht-com-marinheiros-Peg-Dolls-Small-World-Open.webp" class="img-brinquedo"/>
+                    <div class="container-info">
+                        <p th:text="'Benefícios: ' + ${#strings.listJoin(detalhesBrinquedo.beneficios, ', ')}">Benefícios:<br>- Estimula a cristividade<br>- Incentiva a Imaginação<br>- Promove o crecimento com imaginação</p>
+                        <div class="info">
+                            <p th:text="'Marca: ' + ${detalhesBrinquedo.marca}" class="marca">Marca...</p>
+                            <p th:text="'Valor: R$' + ${#numbers.formatDecimal(detalhesBrinquedo.valor, 2, 'COMMA', 3, 'POINT')}" class="value">R$ 69,90</p>
+                        </div>                
+                    </div>                
+                </section>                
+                <p th:text="${detalhesBrinquedo.descricao}" class="descricao">O produto consciste em um veleiro com bonecos, com o intuito de incentivar a criatividade e<br>a imaginação por meio da criação de situaçõe e cenários imaginativos por meio das crianças.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 Mary's Play Haven. Todos os direitos reservados.
+    </footer>
+</body>
+
+</html>

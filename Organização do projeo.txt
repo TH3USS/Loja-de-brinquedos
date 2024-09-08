@@ -1,0 +1,47 @@
+marys-play-haven/
+│
+├── marylojadebrinquedos/
+│   └── src/
+│       └── main/
+│           └── java/
+│               └── br/
+│                   └── com/
+│                       └── maryhaven/
+│                           └── marylojadebrinquedos/
+│                               └── MarysPlayHavenApplication.java
+│                               └── controller/
+│                                   └── HomeController.java
+│                                   └── CatalogoController.java
+│                                   └── DetalhesBrinquedoController.java
+│                                   └── ListaBrinquedosController.java
+│                                   └── NovoBrinquedoController.java
+│                               └── model/
+│                                   └── Brinquedo.java
+│                                   └── Beneficio.java
+│                                   └── Categoria.java
+│                               └── repository/
+│                                   └── BrinquedoRepository.java
+│                                   └── BeneficioRepository.java
+│                                   └── CategoriaRepository.java
+│                               └── service/
+│                                   └── BrinquedoService.java
+│                                   └── BrinquedoServiceImpl.java
+│                           └── resources/
+│                               └── static/
+│                                   └── css/
+│                                       └── home.css
+│                                       └── catalogo.css
+│                                       └── detalhes-brinquedo.css
+│                                       └── lista-brinquedos.css
+│                                   └── templates/
+│                                       └── home.html
+│                                       └── catalogo.html
+│                                       └── detalhes-brinquedo.html
+│                                       └── lista-brinquedos.html
+│                                       └── novo-brinquedo.html
+│                               └── application.properties
+│           └── test/
+│
+└── target/
+│
+└── pom.xml
